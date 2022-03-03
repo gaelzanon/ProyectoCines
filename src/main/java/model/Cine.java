@@ -1,6 +1,7 @@
 package model;
+import javax.persistence.Entity;
 
-//@Entity
+@Entity
 public class Cine {
     private String nombre;
     private String ubicacion;

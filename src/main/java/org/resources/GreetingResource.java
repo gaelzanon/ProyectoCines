@@ -18,5 +18,8 @@ public class GreetingResource {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public String helloName(String name){
-        return "Hola"+ name; }
+
+        return "Hola "+ name.toUpperCase();
+    }
+
 }

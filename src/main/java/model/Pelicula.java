@@ -1,8 +1,9 @@
 package model;
 
 import java.util.List;
+import javax.persistence.Entity;
 
-//@Entity
+@Entity
 public class Pelicula {
 
     private String titulo;
