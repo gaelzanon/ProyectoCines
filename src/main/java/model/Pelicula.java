@@ -26,7 +26,7 @@ public class Pelicula {
         return descripcion;
     }
 
-    public void comentariosPelicula(String comentario){ comentarios.add(comentario);}
+    public List<String> comentariosPelicula(){ return comentarios;}
 
     @Override
     public String toString() {
