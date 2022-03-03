@@ -30,21 +30,5 @@ function toggleTheme() {
 
 // FIN TEMA
 
-// INICIO API
 
-async function loadPokemon () {
-	const res = await fetch("https://pokeapi.co/api/v2/pokemon");
-	const data = await res.json();
-
-
-	const pokemon = data.results;
-	const names = pokemon.map((pokemon) => pokemon.name);
-
-	const pokemonListElement = document.querySelector("#pokemon-list");
-	names.forEach((name) => {
-		const li = document.createElement("li");
-		li.textContent = name;
-		pokemonListElement.appendChild(li);
-	});
-};
 
