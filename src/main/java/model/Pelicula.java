@@ -2,10 +2,11 @@ package model;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Pelicula {
-
+    @Id
     private String titulo;
     private String descripcion;
     private List<String> comentarios;

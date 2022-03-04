@@ -3,12 +3,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Cine {
+public class Descuento {
     @Id
     private String nombre;
-    private String ubicacion;
+    private String descripcion;
 
-    public Cine() {
+    public Descuento() {
     }
 
     public String getNombre() {
@@ -19,19 +19,19 @@ public class Cine {
         this.nombre = nombre;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override
     public String toString() {
         return "Cine{" +
                 "nombre='" + nombre + '\'' +
-                ", ubicacion='" + ubicacion + '\'' +
+                ", ubicacion='" + descripcion + '\'' +
                 '}';
     }
 }

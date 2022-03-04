@@ -1,8 +1,10 @@
 package model;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Espectador {
+    @Id
     private String nombre;
     private String ubicacion;
     private Nivel nivel;
