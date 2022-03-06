@@ -3,12 +3,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Cine {
+public class Espectador {
     @Id
     private String nombre;
     private String ubicacion;
+    private Nivel nivel;
+    //Falta poner Gustos
 
-    public Cine() {
+    public Espectador(){
+
     }
 
     public String getNombre() {
@@ -27,11 +30,12 @@ public class Cine {
         this.ubicacion = ubicacion;
     }
 
-    @Override
-    public String toString() {
-        return "Cine{" +
-                "nombre='" + nombre + '\'' +
-                ", ubicacion='" + ubicacion + '\'' +
-                '}';
+    public Nivel getNivel() {
+        return nivel;
     }
+
+    public void setNivel(Nivel nuevoNivel) {
+        this.nivel = nuevoNivel;
+    }
+
 }
