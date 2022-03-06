@@ -17,8 +17,8 @@ public class DescuentoResource {
     EntityManager entityManager;
 
     @GET
-    public List<Descuento> get(){
-        return entityManager.createNamedQuery("Descuento.findAll",Descuento.class).getResultList();
+    public List<String> get(){
+        return entityManager.createNamedQuery("Descuento.findAll",String.class).getResultList();
     }
 
     @GET
