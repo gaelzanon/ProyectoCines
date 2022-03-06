@@ -3,6 +3,7 @@ package org.resources;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 import org.modelo.Descuento;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
@@ -33,6 +34,7 @@ public class DescuentoResource {
 
     @POST
     @Transactional
+    @RolesAllowed("admin")
     @Path("add")
     public Response create(Descuento descuento){
         //todo: comprobar si el nombre existe. entytymanager.contains?
@@ -45,6 +47,7 @@ public class DescuentoResource {
 
     @PUT
     @Path("{nombre}/update") //todo:revisar si así bien
+    @RolesAllowed("admin")
     @Transactional
     public Response update(@PathParam String nombre, Descuento descuento) {
         if (descuento.getNombre() == null) {
@@ -65,6 +68,7 @@ public class DescuentoResource {
 
     @DELETE
     @Path("{nombre}/delete")
+    @RolesAllowed("admin")
     @Transactional
     public Response delete(@PathParam String nombre) {
         Descuento descuento = entityManager.getReference(Descuento.class, nombre);
