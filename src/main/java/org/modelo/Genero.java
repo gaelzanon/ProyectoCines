@@ -1,5 +1,5 @@
-package model;
+package org.modelo;
 import javax.persistence.Entity;
 
-@Entity
+
 public enum Genero {Comedia,Terror,Romance,Accion};

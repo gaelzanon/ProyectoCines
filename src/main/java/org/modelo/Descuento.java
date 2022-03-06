@@ -1,4 +1,4 @@
-package model;
+package org.modelo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

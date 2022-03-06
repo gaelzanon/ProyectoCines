@@ -1,12 +1,14 @@
-package model;
+package org.modelo;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 @Entity
 public class Espectador {
     @Id
     private String nombre;
-    private String ubicacion;
+    @Enumerated(EnumType.STRING)
     private Nivel nivel;
     //Falta poner Gustos
 
@@ -22,14 +24,6 @@ public class Espectador {
         this.nombre = nombre;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
     public Nivel getNivel() {
         return nivel;
     }
@@ -38,4 +32,11 @@ public class Espectador {
         this.nivel = nuevoNivel;
     }
 
+    @Override
+    public String toString() {
+        return "Espectador{" +
+                "nombre='" + nombre + '\'' +
+                ", nivel=" + nivel +
+                '}';
+    }
 }

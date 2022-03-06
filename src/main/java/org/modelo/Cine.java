@@ -1,4 +1,4 @@
-package model;
+package org.modelo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -6,7 +6,6 @@ import javax.persistence.Id;
 public class Cine {
     @Id
     private String nombre;
-    private String ubicacion;
 
     public Cine() {
     }
@@ -19,19 +18,10 @@ public class Cine {
         this.nombre = nombre;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
     @Override
     public String toString() {
         return "Cine{" +
                 "nombre='" + nombre + '\'' +
-                ", ubicacion='" + ubicacion + '\'' +
                 '}';
     }
 }
