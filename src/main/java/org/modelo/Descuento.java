@@ -1,12 +1,10 @@
 package org.modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.QueryHint;
+import javax.persistence.*;
 
 
 @Entity
+@Table(name = "Descuento")
 @NamedQuery(name = "Descuento.findAll", query = "SELECT nombre FROM Descuento ORDER BY nombre", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
 public class Descuento {
     @Id
