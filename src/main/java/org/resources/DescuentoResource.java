@@ -11,7 +11,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("descuento")
+@Path("/descuento")
 public class DescuentoResource {
 
     @Inject

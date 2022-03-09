@@ -1,40 +1,66 @@
 package org.modelo;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import java.util.*;
 
-@Entity
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Pelicula {
-    @Id
-    private String titulo;
-    private String descripcion;
-    @Enumerated(EnumType.STRING)
-    private Genero genero;
 
-    public String getTitulo() {
-        return titulo;
+    static int id=0;
+    String titulo;
+    String genero;
+    String descripcion;
+    List<String> comentarios;
+
+    public static final Pelicula NOT_FOUND = new Pelicula("Not founc", "");
+
+    public Pelicula() {
+        super();
     }
 
-    public void setTitulo(String titulo) {
+    public Pelicula(String titulo, String genero) {
         this.titulo = titulo;
+        this.genero = genero;
+    }
+
+    public int getId() {
+        return id++;
+    }
+
+    public String getTitulo() {return titulo;}
+
+    public void setTitulo(String nombre) {
+        this.titulo = nombre;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public List<String> comentariosPelicula(){ return comentarios;}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pelicula contact = (Pelicula) o;
+        return Objects.equals(titulo, contact.titulo) && Objects.equals(genero, contact.genero) && (this.getId() == contact.getId());
     }
 
-    public Genero getGenero() {
-        return genero;
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, genero, id);
     }
 
-    public void setGenero(Genero genero) {
-        this.genero = genero;
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "Titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

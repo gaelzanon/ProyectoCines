@@ -7,7 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 //TODO: investigar https://quarkus.io/guides/security-built-in-authentication
 
-@Path("/login")
+@Path("/entrar")
 public class LoginResource {
 
     @GET
