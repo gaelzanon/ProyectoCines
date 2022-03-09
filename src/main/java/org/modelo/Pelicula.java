@@ -27,7 +27,7 @@ public class Pelicula {
     }
 
     public int getId() {
-        return id++;
+        return id;
     }
 
     public String getTitulo() {return titulo;}
