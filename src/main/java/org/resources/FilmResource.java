@@ -1,7 +1,7 @@
 package org.resources;
 
 import org.modelo.Pelicula;
-import org.services.FilmDAO;
+import org.dao.FilmDAO;
 
 
 import javax.inject.Inject;

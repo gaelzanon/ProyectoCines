@@ -1,4 +1,4 @@
-package org.services;
+package org.dao;
 
 import org.modelo.Pelicula;
 

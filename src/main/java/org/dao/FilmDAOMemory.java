@@ -1,6 +1,7 @@
-package org.services;
+package org.dao;
 
 import org.modelo.Pelicula;
+import org.services.FilmStorage;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
