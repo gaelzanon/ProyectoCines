@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org
+http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../static/css/styles.css"
+          th:href="@{css/styles.css}" rel="stylesheet" media="screen"/>
+    <script src="static/js/index.js"></script>
+
+    <title>CinesCastellon</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
+</head>
+<body>
+<div class="fondo">
+    <label class="switch"><input type="checkbox" onClick="toggleTheme()"/><div></div>
+    </label>
+    <h1 class="titulo">Menú de <span id="titulo--rojo" class="titulo--rojo">Cines</span></h1>
+    <a id="btn" class="button" href="/administrador.html">Películas</a>
+    <a id="bt"  class="button" href="/cines.html">Cines</a>
+</div>
+</body>
+</html>

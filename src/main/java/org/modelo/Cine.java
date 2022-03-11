@@ -1,13 +1,26 @@
 package org.modelo;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Cine {
-    @Id
+    static int id = 0;
     private String nombre;
 
+    public static final Cine NOT_FOUND = new Cine("Not found");
+
     public Cine() {
+        super();
+    }
+
+    public Cine(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {

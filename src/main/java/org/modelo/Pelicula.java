@@ -15,7 +15,7 @@ public class Pelicula {
     String descripcion;
     List<String> comentarios;
 
-    public static final Pelicula NOT_FOUND = new Pelicula("Not founc", "");
+    public static final Pelicula NOT_FOUND = new Pelicula("Not found", "");
 
     public Pelicula() {
         super();
