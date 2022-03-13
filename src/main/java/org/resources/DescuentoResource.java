@@ -23,7 +23,7 @@ public class DescuentoResource {
     }
 
     @GET
-    @Path("{nombre}")
+    @Path("get/{nombre}")
     public Descuento getSingle(@PathParam String nombre){
         Descuento descuento=entityManager.find(Descuento.class,nombre);
         if(descuento==null){
@@ -46,7 +46,7 @@ public class DescuentoResource {
     }
 
     @PUT
-    @Path("{nombre}/update") //todo:revisar si así bien
+    @Path("update/{nombre}") //todo:revisar si así bien
     @RolesAllowed("admin")
     @Transactional
     public Response update(@PathParam String nombre, Descuento descuento) {
@@ -67,7 +67,7 @@ public class DescuentoResource {
     }
 
     @DELETE
-    @Path("{nombre}/delete")
+    @Path("delete/{nombre}")
     @RolesAllowed("admin")
     @Transactional
     public Response delete(@PathParam String nombre) {

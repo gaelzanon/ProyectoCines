@@ -1,61 +1,89 @@
 package org.resources;
 
+import org.modelo.Descuento;
 import org.modelo.Pelicula;
-import org.dao.FilmDAO;
 
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
+import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-@Path("/peliculas")
+
+@Path("/pelicula")
 public class FilmResource {
 
     @Inject
-    FilmDAO ds;
+    EntityManager entityManager;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getData() {
-        return Response.ok(ds.retrieveAll()).build();
+    public List<String> get(){
+        return entityManager.createNamedQuery("Pelicula.findAll",String.class).getResultList();
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/retrieve/{id}")
-    public Response getFilm(@PathParam("id") final String id) {
-        if (ds.retrieve(id) == Pelicula.NOT_FOUND) return Response.status(Response.Status.NOT_FOUND).build();
-
-        return Response.ok(ds.retrieve(id)).build();
+    @Path("get/{id}")
+    public Pelicula getSingle(@PathParam int id){
+        Pelicula pelicula=entityManager.find(Pelicula.class,id);
+        if(pelicula==null){
+            throw new WebApplicationException("La pelicula con id "+id+" no existe.",404);
+        }
+        return pelicula;
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/create")
-    public Response createFilm(Pelicula peli) throws URISyntaxException {
-        Pelicula response = ds.create(peli);
-        if(response == Pelicula.NOT_FOUND) return Response.status(Response.Status.CONFLICT).build();
-        URI uri = new URI("/peliculas/" + peli.getId());
-        return Response.created(uri).build();
+    @Transactional
+    @RolesAllowed("admin")
+    @Path("add")
+    public Response create(Pelicula pelicula){
+        //todo: comprobar si id existe. entytymanager.contains?
+        if(entityManager.find(Pelicula.class,pelicula.getId())!=null){
+            throw new WebApplicationException("La pelicula con id "+pelicula.getId()+" ya existe.", 422);
+        }
+        entityManager.persist(pelicula);
+        return Response.ok(pelicula).build();
     }
 
+
     @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/update")
-    public Response updateFilm(final Pelicula peli) throws URISyntaxException {
-        Pelicula result = ds.update(peli);
-        if(result == Pelicula.NOT_FOUND) return Response.status(Response.Status.NOT_FOUND).build();
-        return Response.noContent().build();
+    @Path("update/{id}") //todo:revisar si así bien
+    @RolesAllowed("admin")
+    @Transactional
+    public Response update(@PathParam int id, Pelicula pelicula) {
+        if (pelicula==null) {
+            throw new WebApplicationException("Los datos que quieres actualizar son nulos.", 422);
+        }
+
+        Pelicula pelicula1 = entityManager.find(Pelicula.class, id);
+
+        if (pelicula1 == null) {
+            throw new WebApplicationException("la pelicula con id" + id + " no existe.", 404);
+        }
+
+        pelicula1.setTitulo(pelicula.getTitulo());
+        pelicula1.setGenero(pelicula.getGenero());
+        pelicula1.setDescripcion(pelicula.getDescripcion());
+
+        return Response.ok(pelicula1).build();
     }
 
     @DELETE
-    @Path("/delete/{id}")
-    public Response deleteFilm(@PathParam("id") final String id) {
-        Pelicula result = ds.delete(id);
-        if(result == Pelicula.NOT_FOUND) return Response.status(Response.Status.NOT_FOUND).build();
-        return Response.noContent().build();
+    @Path("delete/{id}")
+    @RolesAllowed("admin")
+    @Transactional
+    public Response delete(@PathParam int id) {
+        Pelicula pelicula = entityManager.getReference(Pelicula.class, id);
+        if (pelicula == null) {
+            throw new WebApplicationException("La pelicula con id " + id + " no existe.", 404);
+        }
+        entityManager.remove(pelicula);
+        return Response.ok().build();
     }
 }

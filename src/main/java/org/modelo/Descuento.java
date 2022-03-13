@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Descuento")
 @NamedQuery(name = "Descuento.findAll", query = "SELECT nombre FROM Descuento ORDER BY nombre", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
 public class Descuento {
     @Id

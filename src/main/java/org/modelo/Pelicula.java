@@ -2,65 +2,59 @@ package org.modelo;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.*;
 
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+@Entity
+@NamedQuery(name = "Pelicula.findAll", query = "SELECT titulo FROM Pelicula ORDER BY titulo", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
 public class Pelicula {
 
-    static int id=0;
+    @Id
+    @GeneratedValue
+    int id;
     String titulo;
     String genero;
     String descripcion;
-    List<String> comentarios;
-
-    public static final Pelicula NOT_FOUND = new Pelicula("Not found", "");
-
-    public Pelicula() {
-        super();
-    }
-
-    public Pelicula(String titulo, String genero) {
-        this.titulo = titulo;
-        this.genero = genero;
-    }
 
     public int getId() {
         return id;
     }
 
-    public String getTitulo() {return titulo;}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public void setTitulo(String nombre) {
-        this.titulo = nombre;
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public List<String> comentariosPelicula(){ return comentarios;}
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pelicula contact = (Pelicula) o;
-        return Objects.equals(titulo, contact.titulo) && Objects.equals(genero, contact.genero) && (this.getId() == contact.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(titulo, genero, id);
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override
     public String toString() {
         return "Pelicula{" +
-                "Titulo='" + titulo + '\'' +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
                 ", genero='" + genero + '\'' +
-                ", id='" + id + '\'' +
+                ", descripcion='" + descripcion + '\'' +
                 '}';
     }
 }
