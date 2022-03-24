@@ -1,13 +1,17 @@
 package org.modelo;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+@Entity
 public class Cine {
-    static int id = 0;
+    @Id
     private String nombre;
+    private String ubicacion;
+
 
     public static final Cine NOT_FOUND = new Cine("Not found");
 
@@ -19,17 +23,6 @@ public class Cine {
         this.nombre = nombre;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     @Override
     public String toString() {

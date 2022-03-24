@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Espectador {
@@ -10,7 +11,9 @@ public class Espectador {
     private String nombre;
     @Enumerated(EnumType.STRING)
     private Nivel nivel;
-    //Falta poner Gustos
+    @Enumerated(EnumType.STRING)
+    private Genero genero;
+
 
     public Espectador(){
 
