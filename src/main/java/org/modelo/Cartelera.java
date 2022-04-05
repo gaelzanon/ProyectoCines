@@ -12,8 +12,8 @@ public class Cartelera {
     private String cine;
     @Id
     private String pelicula;
-    private Date fechainicio;
-    private Date fechafin;
+    private String fecha;
+    private String hora;
 
     public Cartelera() {
         super();

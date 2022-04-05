@@ -9,8 +9,8 @@ import javax.persistence.Id;
 public class Usuario {
     @Id
     private String nombre;
-    @Enumerated(EnumType.STRING)
-    private TipoUsuario tipoUsuario;
+    //@Enumerated(EnumType.STRING)
+    private String tipoUsuario;
     //todo:cifrar?
     private String password;
 }

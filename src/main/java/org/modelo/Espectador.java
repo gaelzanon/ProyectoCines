@@ -9,10 +9,10 @@ import java.util.List;
 public class Espectador {
     @Id
     private String nombre;
-    @Enumerated(EnumType.STRING)
-    private Nivel nivel;
-    @Enumerated(EnumType.STRING)
-    private Genero genero;
+    //@Enumerated(EnumType.STRING)
+    private String nivel;   //PHP no permite convertir un enum a string
+    //@Enumerated(EnumType.STRING)
+    private String genero;
 
 
     public Espectador(){
@@ -27,11 +27,11 @@ public class Espectador {
         this.nombre = nombre;
     }
 
-    public Nivel getNivel() {
+    public String getNivel() {
         return nivel;
     }
 
-    public void setNivel(Nivel nuevoNivel) {
+    public void setNivel(String nuevoNivel) {
         this.nivel = nuevoNivel;
     }
 
