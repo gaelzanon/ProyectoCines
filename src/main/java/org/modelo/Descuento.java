@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 
 @Entity
-@NamedQuery(name = "Descuento.findAll", query = "SELECT nombre FROM Descuento ORDER BY nombre", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
 @IdClass(Descuento.descuentoPK.class)
 public class Descuento {
 
@@ -16,35 +15,12 @@ public class Descuento {
     private String descripcion;
 
     public Descuento() {
+        super();
     }
 
     public static  class descuentoPK implements Serializable {
 
         private String cine;
         private String nombre;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    @Override
-    public String toString() {
-        return "Cine{" +
-                "nombre='" + nombre + '\'' +
-                ", ubicacion='" + descripcion + '\'' +
-                '}';
     }
 }

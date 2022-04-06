@@ -16,30 +16,7 @@ public class Espectador {
 
 
     public Espectador(){
-
+        super();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(String nuevoNivel) {
-        this.nivel = nuevoNivel;
-    }
-
-    @Override
-    public String toString() {
-        return "Espectador{" +
-                "nombre='" + nombre + '\'' +
-                ", nivel=" + nivel +
-                '}';
-    }
 }

@@ -19,6 +19,8 @@ public class Encuesta {
     private int reslt4;
     private int total;
 
-    public Encuesta() {super();}
+    public Encuesta() {
+        super();
+    }
 
 }
