@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Pelicula {
 
     @Id
+    private String id;
     private String titulo;
     private String genero;
     private String descripcion;

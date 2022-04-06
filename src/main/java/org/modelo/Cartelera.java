@@ -5,17 +5,18 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@IdClass(Cartelera.carteleraPK.class)
+//@IdClass(Cartelera.carteleraPK.class)
 public class Cartelera {
 
     @Id
+    private String id;
     private String cine;
-    @Id
+    //@Id
     private String pelicula;
     private String fecha;
     private String hora;
 
-    public Cartelera() {
+    /*public Cartelera() {
         super();
     }
 
@@ -23,6 +24,6 @@ public class Cartelera {
 
         private String cine;
         private String pelicula;
-    }
+    }*/
 
 }
