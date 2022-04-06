@@ -12,9 +12,6 @@ public class Cine {
     private String nombre;
     private String ubicacion;
 
-
-    public static final Cine NOT_FOUND = new Cine("Not found");
-
     public Cine() {
         super();
     }
@@ -23,6 +20,21 @@ public class Cine {
         this.nombre = nombre;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
 
     @Override
     public String toString() {
