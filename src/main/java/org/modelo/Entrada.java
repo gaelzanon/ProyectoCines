@@ -13,6 +13,5 @@ public class Entrada {
     private String espectador;
 
     public Entrada() {
-
     }
 }
