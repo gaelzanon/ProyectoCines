@@ -11,6 +11,7 @@ public class Entrada {
     private String pelicula;
     private String cine;
     private String espectador;
+    private String descuento;
 
     public Entrada() {
     }
