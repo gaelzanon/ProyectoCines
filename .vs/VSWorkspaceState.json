@@ -1,0 +1,21 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EI1050",
+    "\\EI1050\\src",
+    "\\EI1050\\src\\main",
+    "\\EI1050\\src\\main\\java",
+    "\\EI1050\\src\\main\\java\\org",
+    "\\EI1050\\src\\main\\java\\org\\modelo",
+    "\\php",
+    "\\php\\cartelera",
+    "\\php\\cine",
+    "\\php\\entrada",
+    "\\php\\espectador",
+    "\\php\\Iniciosesion_registro",
+    "\\php\\pelicula",
+    "\\php\\valoracion"
+  ],
+  "SelectedNode": "\\php\\cartelera\\cartelera.php",
+  "PreviewInSolutionExplorer": false
+}
