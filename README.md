@@ -10,6 +10,8 @@ QUARKUS: https://quarkus.io/
 
 PgAdmin 4: https://www.pgadmin.org/download/
 
+Todo el código se ha hecho usando el entorno de desarrollo Visual Studio (java, php, html)
+
 
 ## Como ejecutar
 
