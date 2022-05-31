@@ -44,7 +44,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
-    <body class="fondo">
+    <body class="fondo" style="text-align:center;">
         <div class="topnav">
 	        <div class="topnav navbar-expand-lg">
                 <ul class="nav navbar-nav">
@@ -62,26 +62,25 @@
                 </div>
 		    </div>
         </div>
-        <div class="container mt-5">
+        <div class="col-md-3" style="float:left; margin:20px; width:300px; text-align: left;">
+            <br></br>
+            <h4>Filtrar: </h4>
+            <form action="descuento.php" method="POST">
+
+                <input type="text" class="form-control mb-3" name="filtro" placeholder="Nombre Descuento">
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" value="Buscar">               
+
+            </form>
+            <br>
+            <form action="descuento.php" method="POST">
+                <input name="filtro" value="" hidden>
+                <input type="submit" class="btn btn-danger" value="Quitar filtro">
+            </form>
+        </div>
+        <div class="container mt-5" style="float:center; display: inline-block; white-space: nowrap;">
             <div class="row">                       
-                <div class="col-md-3">
-                    <br></br>
-                    <h4>Filtrar: </h4>
-                    <form action="descuento.php" method="POST">
-
-                        <input type="text" class="form-control mb-3" name="filtro" placeholder="Nombre Descuento">
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" value="Buscar">               
-
-                    </form>
-                    <br>
-                    <form action="descuento.php" method="POST">
-                        <input name="filtro" value="" hidden>
-                        <input type="submit" class="btn btn-danger" value="Quitar filtro">
-                    </form>
-                </div>
-                <div class="col-md-8">
                     <h2 style="text-align:center;">Descuentos del cine: <?php echo $user ?></h2>
-                    <table class="table" >
+                    <table class="table" style="text-align:left;">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -183,7 +182,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
             </div>  
         </div>
         <script type="text/javascript">

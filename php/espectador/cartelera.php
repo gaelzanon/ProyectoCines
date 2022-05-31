@@ -107,7 +107,7 @@
 	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
-    <body class="fondo">
+    <body class="fondo" style="text-align: center;">
 	    <div class="topnav">
 	        <div class="topnav navbar-expand-lg">
                 <ul class="nav navbar-nav">
@@ -126,40 +126,39 @@
                 </div>
 	        </div>
         </div>
-        <div class="col-md-3" style="float:left; margin:20px; width:300px;">
-                    <br></br>
-                    <br></br> 
-                    <h4>Filtrar películas:</h4>
-                    <br>
-                    <form action="cartelera.php" method="POST">
-                        <input type="text" class="form-control mb-3" name="filtro" placeholder="texto a filtrar">
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por cine">                                    
-                        <br></br>
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por película">
-                        <br></br>
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por género">
-                        <br></br>
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por provincia">
-                        <br></br>
-                        <br></br>
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Todas las provincias">
-                        <br></br>
-                        <br></br>
-                        <h6 style="color:#5091EA;">Según tus géneros preferidos</h6>
-                        <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Recomendaciones">
-                    </form>               
-                    <br></br>
-                    <form action="cartelera.php" method="POST">
-                        <input name="filtro" value="" hidden>
-                        <input type="hidden" name="tipoFiltro" value="Sin filtro">
-                        <input type="submit" class="btn btn-danger" value="Quitar filtro">
-                    </form>
-                </div>
-        <div class="container mt-5" style="float:center">
-            <div class="row"> 
-                                      
+        <div class="col-md-3" style="float:left; margin:20px; width:300px; text-align: left;">
+            <br></br>
+            <br></br> 
+            <h4>Filtrar películas:</h4>
+            <br>
+            <form action="cartelera.php" method="POST">
+                <input type="text" class="form-control mb-3" name="filtro" placeholder="texto a filtrar">
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por cine">                                    
+                <br></br>
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por película">
+                <br></br>
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por género">
+                <br></br>
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Por provincia">
+                <br></br>
+                <br></br>
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Todas las provincias">
+                <br></br>
+                <br></br>
+                <h6 style="color:#5091EA;">Según tus géneros preferidos</h6>
+                <input type="submit" class="btn btn-light" style="background-color:#180202; color:white;" name="tipoFiltro" value="Recomendaciones">
+            </form>               
+            <br></br>
+            <form action="cartelera.php" method="POST">
+                <input name="filtro" value="" hidden>
+                <input type="hidden" name="tipoFiltro" value="Sin filtro">
+                <input type="submit" class="btn btn-danger" value="Quitar filtro">
+            </form>
+        </div>
+        <div class="container mt-5" style="float:center; display: inline-block; white-space: nowrap;">
+            <div class="row">                 
                 <div class="col-md-8">
-                    <table class="table" >
+                    <table class="table" style="text-align:left;">
                         <br>
                         <?php 
                             if ($tipoFiltro == 'Todas las provincias') {

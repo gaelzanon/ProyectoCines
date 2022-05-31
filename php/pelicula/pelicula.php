@@ -31,7 +31,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
-    <body class="fondo">
+    <body class="fondo" style="text-align: center;">
 	    <div class="topnav">
 	        <div class="topnav navbar-expand-lg">
                 <ul class="nav navbar-nav">
@@ -48,13 +48,13 @@
                 </div>
 		    </div>
         </div>
-            <div class="container mt-5">
-                    <div class="row"> 
-
-                    <div class="col-md-3">
+        
+                    <div class="col-md-3" style="float:left; margin:20px; width:300px; text-align: left;">
                             
                             <br></br>
+                            <br></br>
                             <h3>Nueva película</h3>
+                            <br></br>
                                 <form action="insertar.php" method="POST">
 
                                      <input type="text" class="form-control mb-3" name="pelicula" placeholder="Película" required>
@@ -77,10 +77,13 @@
                                                 
                        
                             </div>
+            <div class="container mt-5" style="float:center; display: inline-block; white-space: nowrap;">
+                    <div class="row"> 
                         
-                        <div class="col-md-8">
                             <h2 style="text-align:center;">Películas</h2>
-                            <table class="table" >
+                            <br></br>
+                            <br></br>
+                            <table class="table" style="text-align: left;">
                                 <thead>
                                     <tr>
                                         <th>Película</th>
@@ -131,7 +134,6 @@
                         
                                 </tbody>
                             </table>
-                        </div>
                     </div>  
             </div>
         <script type="text/javascript">

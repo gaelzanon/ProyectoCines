@@ -43,7 +43,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<title>Menu principal</title>
 </head>
-    <body class="fondo">
+    <body class="fondo" style="text-align:center;">
 	<div class="topnav">
 	        <div class="topnav navbar-expand-lg">
                 <ul class="nav navbar-nav">
@@ -61,14 +61,9 @@
                 </div>
 		    </div>
         </div>
-        <div class="container mt-5">
-            <div class="row">
-
-                <div class="col-md-3">
-
-                    <form action="../../php/cine/resultados.php" method="POST">
-                        <input type="submit" class="btn btn-danger" value="Cerrar Encuesta">
-                    </form>
+        <div class="col-md-3" style="float:left; margin:20px; width:300px; text-align: left;">
+                    <br></br>
+                    
                     <br></br>
 
                     <h3>Nueva encuesta</h3>
@@ -86,12 +81,15 @@
                     <label style="color:#B91717; font-size:20px;"><?php echo $error?></label>
 
                 </div>
+        <div class="container mt-5" style="float:center; display: inline-block; white-space: nowrap;">
+            <div class="row">
 
-                <div class="col-md-8">
+               
                     <h2 style="text-align:center;">Encuesta Activa</h2>
+                        
                         <br></br>
                         <?php if($row!=null){    
-                                echo'<table class="table" >';
+                                echo'<table class="table" style="text-align:left;">';
                                 echo'<thead>';
                                 echo'<tr>';
                                 echo'<th>Opcion</th>';
@@ -120,11 +118,14 @@
                                 echo'</tbody>';
                                 echo'</table>';
                         } else {
-                            echo'<br></br><div style="font-size:20px; color:white; text-align:center;">No hay encuestas activas</div>';
+                            echo'<br></br><div style="font-size:20px; color:white; text-align:center;">No hay encuestas activas</div><br></br>';
                         }
                         ?>
+                        <br></br>
+                        <form action="../../php/cine/resultados.php" method="POST">
+                            <input type="submit" class="btn btn-danger" value="Cerrar Encuesta">
+                        </form>
                 </div>
-            </div>
         </div>
     </body>
 </html>

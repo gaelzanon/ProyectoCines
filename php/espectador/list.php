@@ -30,7 +30,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
-    <body class="fondo">
+    <body class="fondo" style="text-align: center;">
 	    <div class="topnav">
 	        <div class="topnav navbar-expand-lg">
                 <ul class="nav navbar-nav">
@@ -47,10 +47,12 @@
                 </div>
 		    </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5" style="float:center; display: inline-block; white-space: nowrap;">
             <div class="row">                        
                     <h2 style="text-align:center;">Usuarios </h2>
-                    <table class="table" >
+                    <br></br>
+                    <br></br>
+                    <table class="table" style="text-align:left;">
                         <thead>
                             <tr>
                                 <th>Nombre</th>

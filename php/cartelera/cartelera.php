@@ -55,7 +55,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
-    <body class="fondo">
+    <body class="fondo" style="text-align:center;">
 	    <div class="topnav">
 	        <div class="topnav navbar-expand-lg">
                 <ul class="nav navbar-nav">
@@ -73,13 +73,13 @@
                 </div>
 		    </div>
         </div>
-            <div class="container mt-5">
-                <div class="row">                        
+            <div class="container mt-5" style="float:center; display: inline-block; white-space: nowrap;">
+                <div class="row">
                     <h2 style="text-align:center;">Cartelera</h2>
                     <br></br>
                     <label style="color:#B91717; font-size:20px;"><?php echo $error?></label>
                     <br></br>
-                    <table class="table">
+                    <table class="table" style="text-align:left;">
                         <thead>
                             <tr>
                                 <th>Película</th>
@@ -182,7 +182,7 @@
                     <p><br></p>
                     <div class="collapse" id="collapse">
                             <h2 style="text-align:center;">Películas Disponibles</h2>
-                            <table class="table" >
+                            <table class="table" style="text-align:left;">
                                 <thead>
                                     <tr>
                                         <th>Película</th>
